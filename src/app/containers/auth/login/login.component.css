@@ -1,0 +1,51 @@
+.container-fluid {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f2f5f8;
+
+}
+
+.container {
+    width: 500px;
+    height: 50%;
+    background-color: #009c56;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    border-radius: 50px;
+    box-shadow: rgba(128, 128, 128, 0.202) 3px 3px 10px, rgba(128, 128, 128, 0.202) -3px -3px 10px;
+}
+
+.container input {
+    width: 80%;
+    height: 40px;
+    border-radius: 20px;
+    border: 1px solid #f2f5f8;
+    padding: 5px 10px;
+}
+
+.container input:focus {
+    border: 1px solid #3262AC;
+}
+
+.btn {
+    width: 80%;
+    height: 40px;
+    border-radius: 15px;
+    background-color: #3262AC;
+    color: #ffffff;
+    border: 1px solid #3262AC;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+    transform: scale(1.03);
+    cursor: pointer;
+    background-color: #3262AC;
+}

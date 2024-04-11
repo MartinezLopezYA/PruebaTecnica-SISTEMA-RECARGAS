@@ -1,0 +1,34 @@
+<app-alertas *ngIf="alertaVisible" [mensaje]="mensaje" [tipo]="tipo"></app-alertas>
+
+<div class="container-fluid">
+    <div class="container">
+        <div class="title">
+            <h4>REALIZAR RECARGA</h4>
+            <a href="" (click)="salir()">SALIR</a>
+        </div>
+
+        <form class="form" [formGroup]="formulario">
+            <div class="form-row">
+                <div class="form-group">
+                    <p class="label" for="operador">OPERADOR: </p>
+                    <select formControlName="operador" class="form-control">
+                        <option *ngFor="let operador of listaOperadores" [value]="operador.id">
+                            <img src="{{ operador.imageUrl }}" width="20" height="20">
+                            {{ operador.name }}
+                        </option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <p class="label" for="numero">NUMERO DE TELEFONO: </p>
+                    <input type="number" formControlName="numero" class="form-control">
+                </div>
+                <div class="form-group">
+                    <p class="label" for="valor">VALOR RECARGA: </p>
+                    <input type="number" formControlName="valor" class="form-control">
+                </div>
+            </div>
+            <button type="submit" class="btn" (click)="envairRecarga()">ENVIAR</button>
+        </form>
+
+    </div>
+</div>

@@ -1,0 +1,31 @@
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    z-index: 1;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.alert-success {
+    color: #ffffff;
+    background-color: #009c56;
+    border-color: #d6e9c6;
+}
+
+.alert-danger {
+    color: #ffffff;
+    background-color: #d20000;
+    border-color: #ebccd1;
+}
+
+
+.alert-info {
+    color: #fff;
+    background-color: #3262AC;
+    border-color: #ebccd1;
+}
