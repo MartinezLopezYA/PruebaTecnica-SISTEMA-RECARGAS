@@ -17,12 +17,6 @@ export class RecargaComponent {
 
   }
 
-  listaOperadores: any[] = [
-    {id: 1, name: "Claro"},
-    {id: 2, name: "Movistar"},
-    {id: 3, name: "Tigo"}
-  ]
-
   formulario!: FormGroup;
 
   mensaje: string = '';
@@ -38,17 +32,23 @@ export class RecargaComponent {
     }, 3000);
   }
 
+  listaOperadores: {id: number, name: string}[] = [];
+
   getOperadores() {
-    this.ope.getOperadores().subscribe(
-      res => {
-        if (res) {
-          alert(res);
-        }
+  this.ope.getOperadores().subscribe(
+    res => {
+      if (res && res.data) { 
+        this.listaOperadores = res.data.map((operador: {id: number, name: string}) => ({
+          id: operador.id,
+          name: operador.name
+        }));
       }
-    )
-  }
+    }
+  )
+}
 
   ngOnInit(): void {
+    this.getOperadores();
     this.formulario = this.formBuilder.group({
       operador: ['', Validators.required],
       numero: ['', [Validators.required, Validators.pattern('[0-9]{10}')]],

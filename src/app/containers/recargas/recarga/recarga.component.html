@@ -13,7 +13,6 @@
                     <p class="label" for="operador">OPERADOR: </p>
                     <select formControlName="operador" class="form-control">
                         <option *ngFor="let operador of listaOperadores" [value]="operador.id">
-                            <img src="{{ operador.imageUrl }}" width="20" height="20">
                             {{ operador.name }}
                         </option>
                     </select>
